@@ -24,7 +24,7 @@ i18n
     debug: false,
 
     interpolation: {
-      escapeValue: false, // React уже безопасен от XSS
+      escapeValue: false,
     },
 
     detection: {

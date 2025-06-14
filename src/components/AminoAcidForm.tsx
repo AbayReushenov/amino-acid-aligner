@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+// import { z } from 'zod';
 import {
   TextField,
   Button,
@@ -69,7 +69,7 @@ const AminoAcidForm: React.FC<AminoAcidFormProps> = ({ onSubmit, isLoading = fal
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={3}>
           {/* Первая последовательность */}
-          <Grid item xs={12} md={6}>
+          <Paper>
             <Controller
               name="sequence1"
               control={control}
@@ -92,10 +92,10 @@ const AminoAcidForm: React.FC<AminoAcidFormProps> = ({ onSubmit, isLoading = fal
                 />
               )}
             />
-          </Grid>
+          </Paper>
 
           {/* Вторая последовательность */}
-          <Grid item xs={12} md={6}>
+          <Paper>
             <Controller
               name="sequence2"
               control={control}
@@ -118,10 +118,10 @@ const AminoAcidForm: React.FC<AminoAcidFormProps> = ({ onSubmit, isLoading = fal
                 />
               )}
             />
-          </Grid>
+          </Paper>
 
           {/* Информация о длине */}
-          <Grid item xs={12}>
+          <Paper>
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
               <Chip
                 label={`${t('form.length')} 1: ${watchedValues.sequence1.length}`}
@@ -143,10 +143,10 @@ const AminoAcidForm: React.FC<AminoAcidFormProps> = ({ onSubmit, isLoading = fal
                 />
               )}
             </Box>
-          </Grid>
+          </Paper>
 
           {/* Кнопки */}
-          <Grid item xs={12}>
+          <Paper>
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
               <LoadingButton
                 type="submit"
@@ -175,10 +175,10 @@ const AminoAcidForm: React.FC<AminoAcidFormProps> = ({ onSubmit, isLoading = fal
                 {t('form.clear')}
               </Button>
             </Box>
-          </Grid>
+          </Paper>
 
           {/* Пример последовательности */}
-          <Grid item xs={12}>
+          <Paper>
             <Alert severity="info" sx={{ mt: 2 }}>
               <Typography variant="body2" gutterBottom>
                 {t('example.description')}
@@ -204,7 +204,7 @@ const AminoAcidForm: React.FC<AminoAcidFormProps> = ({ onSubmit, isLoading = fal
                 {exampleSequence}
               </Box>
             </Alert>
-          </Grid>
+          </Paper>
         </Grid>
       </form>
     </Paper>
