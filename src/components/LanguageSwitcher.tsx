@@ -30,13 +30,13 @@ const LanguageSwitcher: React.FC = () => {
   return (
     <Box sx={{ minWidth: 120, display: "flex", alignItems: "center", gap: 2 }}>
       <FormControl variant="outlined" size="small">
-        <InputLabel id="language-select-label">{t("language", "Язык")}</InputLabel>
+        <InputLabel id="language-select-label">{t("language.selector")}</InputLabel>
         <Select
           labelId="language-select-label"
           id="language-select"
           value={currentLang}
           onChange={handleChange}
-          label={t("language", "Язык")}
+          label={t("language.selector")}
           sx={{
             background: "var(--color-surface)",
             borderRadius: "var(--radius-base)",
