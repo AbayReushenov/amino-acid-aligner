@@ -9,7 +9,9 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 import { useSequenceAlignment } from './hooks/useSequenceAlignment';
 import { SequenceFormData, AlignmentResult } from './types/aminoAcid.types';
 
-import './i18n/i18n';
+// import './i18n/i18n';
+
+import './App.css'
 
 const theme = createTheme({
   palette: {
