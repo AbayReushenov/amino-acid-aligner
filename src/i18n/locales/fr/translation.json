@@ -1,0 +1,88 @@
+{
+  "title": "Aligneur de séquences d'acides aminés",
+  "subtitle": "Analysez et comparez les séquences de protéines avec une visualisation avancée",
+
+  "form": {
+    "sequence1": {
+      "label": "Première séquence",
+      "placeholder": "Entrez la première séquence d'acides aminés...",
+      "helper": "Acides aminés valides : A, R, N, D, C, E, Q, G, H, I, L, K, M, F, P, S, T, W, Y, V, -"
+    },
+    "sequence2": {
+      "label": "Deuxième séquence",
+      "placeholder": "Entrez la deuxième séquence d'acides aminés...",
+      "helper": "Les séquences doivent avoir la même longueur pour la comparaison"
+    },
+    "submit": "Générer l'alignement",
+    "clear": "Tout effacer",
+    "example": "Essayer l'exemple"
+  },
+
+  "validation": {
+    "required": "Ce champ est requis",
+    "invalidCharacters": "Caractères d'acides aminés invalides : {{characters}}",
+    "lengthMismatch": "Les séquences doivent avoir la même longueur. Séquence 1 : {{length1}} caractères, Séquence 2 : {{length2}} caractères",
+    "tooShort": "La séquence doit contenir au moins 1 caractère",
+    "tooLong": "La séquence ne peut pas dépasser 10000 caractères"
+  },
+
+  "results": {
+    "title": "Résultats de l'alignement",
+    "sequence1Label": "Séquence 1",
+    "sequence2Label": "Séquence 2 (différences surlignées)",
+    "stats": {
+      "title": "Statistiques d'alignement",
+      "length": "Longueur de séquence",
+      "matches": "Correspondances",
+      "differences": "Différences",
+      "similarity": "Similarité"
+    }
+  },
+
+  "copy": {
+    "success": "Séquence copiée dans le presse-papiers !",
+    "error": "Échec de la copie dans le presse-papiers",
+    "instruction": "Sélectionnez les acides aminés pour les copier"
+  },
+
+  "example": {
+    "title": "Exemple de séquence",
+    "description": "Essayez cette séquence d'hémoglobine :",
+    "clickToCopy": "Cliquez pour copier l'exemple"
+  },
+
+  "language": {
+    "selector": "Langue",
+    "en": "English",
+    "ru": "Русский",
+    "fr": "Français"
+  },
+
+  "theme": {
+    "light": "Thème clair",
+    "dark": "Thème sombre",
+    "auto": "Auto"
+  },
+
+  "instructions": {
+    "title": "Comment utiliser",
+    "steps": [
+      "Entrez deux séquences d'acides aminés de longueur égale",
+      "Cliquez sur 'Générer l'alignement' pour comparer les séquences",
+      "Visualisez les différences codées par couleur et les statistiques",
+      "Sélectionnez le texte pour copier les séquences",
+      "Utilisez l'exemple de séquence pour tester l'application"
+    ]
+  },
+
+  "errors": {
+    "general": "Une erreur s'est produite. Veuillez réessayer.",
+    "networkError": "Erreur réseau. Vérifiez votre connexion.",
+    "validationError": "Veuillez corriger les erreurs de validation."
+  },
+
+  "loading": {
+    "analyzing": "Analyse des séquences...",
+    "generating": "Génération de l'alignement..."
+  }
+}

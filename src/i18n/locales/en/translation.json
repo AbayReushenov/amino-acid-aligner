@@ -1,0 +1,88 @@
+{
+  "title": "Amino Acid Sequence Aligner",
+  "subtitle": "Analyze and compare protein sequences with advanced visualization",
+
+  "form": {
+    "sequence1": {
+      "label": "First Sequence",
+      "placeholder": "Enter the first amino acid sequence...",
+      "helper": "Valid amino acids: A, R, N, D, C, E, Q, G, H, I, L, K, M, F, P, S, T, W, Y, V, -"
+    },
+    "sequence2": {
+      "label": "Second Sequence",
+      "placeholder": "Enter the second amino acid sequence...",
+      "helper": "Sequences must have equal length for comparison"
+    },
+    "submit": "Generate Alignment",
+    "clear": "Clear All",
+    "example": "Try Example"
+  },
+
+  "validation": {
+    "required": "This field is required",
+    "invalidCharacters": "Invalid amino acid characters: {{characters}}",
+    "lengthMismatch": "Sequences must have equal length. Sequence 1: {{length1}} characters, Sequence 2: {{length2}} characters",
+    "tooShort": "Sequence must be at least 1 character long",
+    "tooLong": "Sequence cannot exceed 10000 characters"
+  },
+
+  "results": {
+    "title": "Alignment Results",
+    "sequence1Label": "Sequence 1",
+    "sequence2Label": "Sequence 2 (differences highlighted)",
+    "stats": {
+      "title": "Alignment Statistics",
+      "length": "Sequence Length",
+      "matches": "Matches",
+      "differences": "Differences",
+      "similarity": "Similarity"
+    }
+  },
+
+  "copy": {
+    "success": "Sequence copied to clipboard!",
+    "error": "Failed to copy to clipboard",
+    "instruction": "Select amino acids to copy them"
+  },
+
+  "example": {
+    "title": "Example Sequence",
+    "description": "Try this hemoglobin sequence:",
+    "clickToCopy": "Click to copy example sequence"
+  },
+
+  "language": {
+    "selector": "Language",
+    "en": "English",
+    "ru": "Русский",
+    "fr": "Français"
+  },
+
+  "theme": {
+    "light": "Light Theme",
+    "dark": "Dark Theme",
+    "auto": "Auto"
+  },
+
+  "instructions": {
+    "title": "How to Use",
+    "steps": [
+      "Enter two amino acid sequences of equal length",
+      "Click 'Generate Alignment' to compare sequences",
+      "View color-coded differences and statistics",
+      "Select text to copy sequences to clipboard",
+      "Use the example sequence to test the application"
+    ]
+  },
+
+  "errors": {
+    "general": "An error occurred. Please try again.",
+    "networkError": "Network error. Please check your connection.",
+    "validationError": "Please correct the validation errors."
+  },
+
+  "loading": {
+    "analyzing": "Analyzing sequences...",
+    "generating": "Generating alignment..."
+  }
+}
