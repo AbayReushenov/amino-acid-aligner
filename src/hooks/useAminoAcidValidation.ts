@@ -66,31 +66,65 @@ export const useAminoAcidValidation = (): UseAminoAcidValidationReturn & { creat
     };
   }, [validateSequence, validateSequenceLength]);
 
-  const createValidationSchema = useCallback(() => {
-    return z.object({
-      sequence1: z.string()
-        .min(1, t('validation.required'))
-        .max(10000, t('validation.tooLong'))
-        .refine((value) => {
-          const invalidChars = value.split('').filter(char => !VALID_AMINO_ACIDS.includes(char));
-          return invalidChars.length === 0;
-        }, {
-          message: t('validation.invalidCharacters', { characters: 'invalid characters' })
+const createValidationSchema = useCallback(() => {
+  return z.object({
+    sequence1: z.string()
+      .min(1, t('validation.required'))
+      .max(10000, t('validation.tooLong'))
+      .refine((value) => {
+        const invalidChars = value.split('').filter(char => !VALID_AMINO_ACIDS.includes(char));
+        return invalidChars.length === 0;
+      }, {
+        message: t('validation.invalidCharacters', { characters: 'invalid characters' })
+      }),
+    sequence2: z.string()
+      .min(1, t('validation.required'))
+      .max(10000, t('validation.tooLong'))
+      .refine((value) => {
+        const invalidChars = value.split('').filter(char => !VALID_AMINO_ACIDS.includes(char));
+        return invalidChars.length === 0;
+      }, {
+        message: t('validation.invalidCharacters', { characters: 'invalid characters' })
+      })
+  }).superRefine((data, ctx) => {
+    // Валидация длины последовательностей с актуальными данными
+    if (data.sequence1.length !== data.sequence2.length) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: t('validation.lengthMismatch', {
+          length1: data.sequence1.length,
+          length2: data.sequence2.length
         }),
-      sequence2: z.string()
-        .min(1, t('validation.required'))
-        .max(10000, t('validation.tooLong'))
-        .refine((value) => {
-          const invalidChars = value.split('').filter(char => !VALID_AMINO_ACIDS.includes(char));
-          return invalidChars.length === 0;
-        }, {
-          message: t('validation.invalidCharacters', { characters: 'invalid characters' })
-        })
-    }).refine((data) => data.sequence1.length === data.sequence2.length, {
-      message: t('validation.lengthMismatch'),
-      path: ['sequence2']
-    });
-  }, [t]);
+        path: ['sequence2']
+      });
+    }
+
+    // Валидация символов для первой последовательности
+    const invalidChars1 = data.sequence1.split('').filter(char => !VALID_AMINO_ACIDS.includes(char));
+    if (invalidChars1.length > 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: t('validation.invalidCharacters', {
+          characters: [...new Set(invalidChars1)].join(', ')
+        }),
+        path: ['sequence1']
+      });
+    }
+
+    // Валидация символов для второй последовательности
+    const invalidChars2 = data.sequence2.split('').filter(char => !VALID_AMINO_ACIDS.includes(char));
+    if (invalidChars2.length > 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: t('validation.invalidCharacters', {
+          characters: [...new Set(invalidChars2)].join(', ')
+        }),
+        path: ['sequence2']
+      });
+    }
+  });
+}, [t]);
+
 
   return {
     validateSequence,
