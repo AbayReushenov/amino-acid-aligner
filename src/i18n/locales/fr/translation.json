@@ -13,9 +13,11 @@
       "placeholder": "Entrez la deuxième séquence d'acides aminés...",
       "helper": "Les séquences doivent avoir la même longueur pour la comparaison"
     },
+    "title": "Entrer les séquences",
     "submit": "Générer l'alignement",
     "clear": "Tout effacer",
-    "example": "Essayer l'exemple"
+    "example": "Essayer l'exemple",
+    "length": "Longueur de séquence"
   },
 
   "validation": {

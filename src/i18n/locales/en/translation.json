@@ -13,9 +13,11 @@
       "placeholder": "Enter the second amino acid sequence...",
       "helper": "Sequences must have equal length for comparison"
     },
+    "title": "Enter Sequences",
     "submit": "Generate Alignment",
     "clear": "Clear All",
-    "example": "Try Example"
+    "example": "Try Example",
+    "length": "Sequence Length"
   },
 
   "validation": {
