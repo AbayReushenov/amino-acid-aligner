@@ -1,6 +1,6 @@
 # Приложение для визуализации выравнивания аминокислотных последовательностей
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-blue)](https://abayreushenov.github.io/amino-acid-aligner/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-blue)](https://abayreushenov.github.io/amino-acid-aligner)
 
 ## Описание
 
@@ -41,7 +41,7 @@
 ## Деплой
 
 Приложение доступно по адресу:
-[https://abayreushenov.github.io/amino-acid-aligner/](https://abayreushenov.github.io/amino-acid-aligner/)
+[https://abayreushenov.github.io/amino-acid-aligner](https://abayreushenov.github.io/amino-acid-aligner)
 
 ## Установка и запуск
 
