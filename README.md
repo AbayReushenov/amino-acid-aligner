@@ -1,54 +1,71 @@
-# React + TypeScript + Vite
+# Приложение для визуализации выравнивания аминокислотных последовательностей
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-blue)](https://abayreushenov.github.io/amino-acid-aligner/)
 
-Currently, two official plugins are available:
+## Описание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+В области вычислительной биологии и биоинформатики одним из важнейших методов анализа белковых последовательностей является их выравнивание. Это позволяет определить сходство и различия между множеством последовательностей, исследовать функцию белков и их связи с другими белками.
 
-## Expanding the ESLint configuration
+Вот так может выглядеть аминокислотная последовательность (например, гемоглобин из мангуста) в буквенном представлении:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+`VLSPADKTNIKASWEKIGSHGGEYGAEALERTFLCFPTTKTYFPHFDLSHGSAQVKAHGKKVADALTNAVGHLDDLPGALSALSDLHAYKLRVDPVNFKLLSHCLLVTLASHHPAEFT`
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+А вот её же представление в 3D: [https://www.rcsb.org/3d-view/4YU3/1](https://www.rcsb.org/3d-view/4YU3/1)
+
+Каждая "буква" — это аминокислота, обладающая своими физическими и биологическими свойствами, которые влияют на структуру и функцию белка.
+
+## Основные компоненты приложения
+
+### Валидация ввода аминокислотных последовательностей
+- Данные могут содержать только латинские буквы аминокислот (A, R, N, D, C, E, Q, G, H, I, L, K, M, F, P, S, T, W, Y, V) и символ `-`
+- Проверка одинаковой длины последовательностей
+- Обязательные поля для ввода
+
+### Визуализация выравнивания
+- Цветовая схема для различных аминокислот
+- Подсветка различий между последовательностями
+- Адаптивный дизайн для разных размеров экрана
+
+### Дополнительные функции
+- Копирование выделенных фрагментов в буфер обмена
+- Поддержка встроенного поиска (Ctrl+F)
+- Уведомления о действиях пользователя
+
+## Технологии
+
+- **React** с **TypeScript**
+- **Material UI** для компонентов интерфейса
+- **React Hook Form** для валидации форм
+- **GitHub Pages** для хостинга
+
+## Деплой
+
+Приложение доступно по адресу:
+[https://abayreushenov.github.io/amino-acid-aligner/](https://abayreushenov.github.io/amino-acid-aligner/)
+
+## Установка и запуск
+
+1. Клонировать репозиторий:
+```bash
+git clone https://github.com/abayreushenov/amino-acid-aligner.git
+cd biocode
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Установить зависимости:
+```bash
+npm install
 ```
+
+3. Запустить приложение:
+```bash
+npm start
+```
+
+4. Для сборки production-версии:
+```bash
+npm run build
+```
+
+## Лицензия
+
+Этот проект распространяется под лицензией MIT.
